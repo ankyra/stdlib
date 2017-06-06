@@ -7,7 +7,7 @@ machine:
 dependencies:
   pre:
   - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.10.3.tgz > escape.tgz
-  - tar -xvzf escape.tgz
+  - rm -rf escape && tar -xvzf escape.tgz
   - mv escape /home/ubuntu/bin
   - escape version
 
