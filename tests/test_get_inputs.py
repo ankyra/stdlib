@@ -2,6 +2,8 @@ import unittest
 import os
 import sys
 sys.path = ["../"] + sys.path
+print sys.path
+print os.listdir("../")
 import escape
 
 class TestInputReaders(unittest.TestCase):
