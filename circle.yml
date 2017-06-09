@@ -10,7 +10,7 @@ dependencies:
   pre:
   - pip install pytest
   - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.10.3.tgz > /home/ubuntu/bin/escape.tgz
-  - tar -C /home/ubuntu/bin -xvzf escape.tgz
+  - tar -C /home/ubuntu/bin -xvzf /home/ubuntu/bin/escape.tgz
   - escape version
 
 compile:
