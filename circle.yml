@@ -1,6 +1,4 @@
 machine:
-  python:
-    version: 2.7.5
   environment:
     ESCAPE_PROJECT: "_"
     ESCAPE_STORAGE_BACKEND: "escape"
