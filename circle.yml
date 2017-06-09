@@ -6,6 +6,7 @@ machine:
 
 dependencies:
   pre:
+  - pip install pytest
   - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.10.3.tgz > escape.tgz
   - rm -rf escape && tar -xvzf escape.tgz
   - mv escape /home/ubuntu/bin
