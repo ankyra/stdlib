@@ -1,6 +1,8 @@
 import unittest
-import escape
 import os
+import sys
+sys.path = ["../"] + sys.path
+import escape
 
 class TestInputReaders(unittest.TestCase):
 
