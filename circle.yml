@@ -16,6 +16,7 @@ dependencies:
 
 compile:
   override:
+  - cd python-escape-stdlib
   - escape state create
   - escape state create --deploy
   - escape release
