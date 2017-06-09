@@ -16,7 +16,7 @@ dependencies:
 
 compile:
   override:
-  - cd python-escape-stdlib
+  - cd /home/ubuntu/python-escape-stdlib/
   - escape state create
   - escape state create --deploy
   - escape release
