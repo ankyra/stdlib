@@ -115,6 +115,7 @@ metadata: {}
 #
 includes:
 - 'escape/*.py'
+- 'tests/*.py'
 
 # Errands.
 #
