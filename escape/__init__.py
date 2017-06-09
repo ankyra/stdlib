@@ -6,4 +6,6 @@ def get_string_input(key):
 
 def get_list_input(key):
     i = get_string_input(key)
-    return json.reads(i)
+    if i == "":
+        return []
+    return json.loads(i)

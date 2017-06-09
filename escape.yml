@@ -181,7 +181,7 @@ build: ""
 #
 post_build: ""
 
-test: ""
+test: test.sh
 
 pre_deploy: ""
 
