@@ -25,6 +25,7 @@ class Outputs:
         return self
 
     def save(self):
+        print "Saving", self.path
         with open(self.path, 'w') as f:
             f.write(json.dumps(self.outputs))
 

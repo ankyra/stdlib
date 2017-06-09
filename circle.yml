@@ -9,16 +9,15 @@ machine:
 dependencies:
   pre:
   - pip install pytest
-  - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.10.3.tgz > escape.tgz
-  - rm -rf escape && tar -xvzf escape.tgz
-  - mv escape /home/ubuntu/bin
+  - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.10.3.tgz > /home/ubuntu/bin/escape.tgz
+  - tar -C /home/ubuntu/bin -xvzf escape.tgz
   - escape version
 
 compile:
   override:
   - escape state create
   - escape state create --deploy
-  - escape release --skip-tests
+  - escape release
 
 test:
   override:
