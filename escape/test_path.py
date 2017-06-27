@@ -10,7 +10,7 @@ class TestInputReaders(unittest.TestCase):
             "": False
         }
         for test, expected in cases.iteritems():
-            self.assertEqual(path.is_binary_on_path(test, ""), expected, test)
+            self.assertEqual(path.is_binary_on_path(test), expected, test)
 
     def test_parse_path_string(self):
         cases = {

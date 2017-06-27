@@ -1,8 +1,7 @@
-
 import os
 
 def is_binary_on_path(binary, path_string = None):
-    if path_string is not None:
+    if path_string is None:
         path_string = get_path()
     dirs = parse_path_string(path_string)
     for d in dirs:
