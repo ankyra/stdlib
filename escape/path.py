@@ -16,7 +16,7 @@ def add_binary_to_path(binary_location):
     for p in path.split(":"):
         target = os.path.join(p, os.path.basename(binary_location))
         try:
-            shutil.move(binary_location, target)
+            shutil.copy(binary_location, target)
             print "Copied", binary_location, "to", target
             return True
         except:
