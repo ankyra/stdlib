@@ -1,5 +1,6 @@
 import os
 import shutil
+import stat
 
 def is_binary_on_path(binary, path_string = None):
     if path_string is None:
@@ -31,4 +32,8 @@ def parse_path_string(string):
         return []
     return string.split(":")
 
+def make_executable(path):
+    st = os.stat(path)
+    if not st.st_mode | stat.S_IEXEC:
+        os.chmod(path, st.st_mode | stat.S_IEXEC)
 
