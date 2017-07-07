@@ -1,22 +1,15 @@
 machine:
   python:
     version: 2.7.12
-  environment:
-    ESCAPE_PROJECT: "_"
-    ESCAPE_STORAGE_BACKEND: "escape"
-    ESCAPE_API_SERVER: "https://registry.ankyra.io"
 
 dependencies:
   pre:
-  - pip install pytest
-  - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.10.3.tgz > /home/ubuntu/bin/escape.tgz
+  - pip install nosetests
+  - curl https://storage.googleapis.com/escape-releases-eu/escape-v0.12.3.tgz > /home/ubuntu/bin/escape.tgz
   - tar -C /home/ubuntu/bin -xvzf /home/ubuntu/bin/escape.tgz
-  - escape version
 
 compile:
   override:
-  - escape state create
-  - escape state create --deploy
   - escape release
 
 test:

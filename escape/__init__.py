@@ -2,6 +2,11 @@ import os
 import json
 import sys
 
+# Disable output buffering
+if hasattr(sys.stdout, "fileno"):
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+    sys.stderr = os.fdopen(sys.stderr.fileno(), 'w', 0)
+
 import path
 import kube
 import process
