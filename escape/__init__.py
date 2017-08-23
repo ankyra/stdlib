@@ -15,6 +15,9 @@ from .process import OutputRecorder
 def get_string_input(key):
     return os.environ["INPUT_" + key]
 
+def get_string_output(key):
+    return os.environ["OUTPUT_" + key]
+
 def get_list_input(key):
     i = get_string_input(key)
     if i == "":
