@@ -18,6 +18,9 @@ def get_string_input(key):
 def get_string_output(key):
     return os.environ["OUTPUT_" + key]
 
+def get_bool_input(key):
+    return get_string_input(key) == "1"
+
 def get_list_input(key):
     i = get_string_input(key)
     if i == "":
