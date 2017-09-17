@@ -1,0 +1,16 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+    - image: ankyra/escape:latest
+
+    steps:
+    - checkout
+    - run:
+        name: Install nose
+        command: pip install nose==1.3.7
+    - run: 
+        name: Build Escape release
+        command: escape release --collapse-logs=false
+
