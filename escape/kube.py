@@ -58,6 +58,16 @@ def wait_for_ready_pod(kubecfg, app):
         sys.stdout.flush()
         time.sleep(sleep_time)
 
+def upload_file_to_pod(kubecfg, pod_name, path, target_path):
+    print "Copying", path, "to pod", pod_name
+    sys.stdout.flush()
+    cmd = ["kubectl", "--kubeconfig", kubecfg, "exec", "-i", pod_name, "--", "tee", target_path]
+    try:
+        p = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+        p.communicate(open(path).read())
+    except:
+        sys.exit(1)
+
 def _get_ready_pod(kube_json_resp):
     if 'items' not in kube_json_resp:
         return
